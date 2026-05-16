@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Game Frame</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+<div class="logoBox">🎮</div>
+
+<div>
+<h1>Game Frame</h1>
+<p>Your game vault</p>
+</div>
+</header>
+
+<div class="tabs">
+
+<button class="tab active"
+data-page="library">
+Library
+</button>
+
+<button class="tab"
+data-page="spinner">
+Spinner
+</button>
+
+<button class="tab"
+data-page="manage">
+Manage
+</button>
+
+</div>
+
+<main>
+
+<section id="library" class="page active">
+
+<div class="sectionTitle">
+<h2>Your Library</h2>
+<span id="gameCount">0 games</span>
+</div>
+
+<div id="libraryGames"></div>
+
+<div id="messageBox"></div>
+
+</section>
+
+<section id="spinner" class="page">
+
+<div class="card">
+
+<select id="consoleFilter">
+<option value="all">
+All Consoles
+</option>
+</select>
+
+<div id="wheel">
+Ready to spin
+</div>
+
+<button id="spinBtn">
+Spin Wheel
+</button>
+
+</div>
+
+</section>
+
+<section id="manage" class="page">
+
+<div class="card">
+
+<h3>Add Console</h3>
+
+<input
+id="consoleInput"
+placeholder="Nintendo Switch">
+
+<button id="addConsoleBtn">
+Add Console
+</button>
+
+<div id="consoleList"></div>
+
+</div>
+
+<div class="card">
+
+<h3>Add Game</h3>
+
+<input
+id="gameName"
+placeholder="Game name">
+
+<select id="gameConsole"></select>
+
+<input
+type="file"
+id="gameImage"
+accept="image/*">
+
+<button id="addGameBtn">
+Add Game
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
