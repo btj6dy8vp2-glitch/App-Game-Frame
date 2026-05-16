@@ -1,52 +1,57 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: white;
-  text-align: center;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-header {
-  padding: 30px 10px;
-}
+  <title>Game Frame</title>
 
-main {
-  max-width: 500px;
-  margin: auto;
-  padding: 10px;
-}
+  <!-- ICON FIX -->
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
 
-.input-area {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 20px;
-}
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Game Frame">
 
-input {
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  width: 70%;
-}
+  <link rel="stylesheet" href="style.css">
+</head>
 
-button {
-  padding: 10px 15px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-}
+<body>
 
-ul {
-  list-style: none;
-  padding: 0;
-}
+  <header>
+    <h1>🎮 Game Frame</h1>
 
-li {
-  background: rgba(0,0,0,0.3);
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 12px;
-  display: flex;
-  justify-content: space-between;
-}
+    <nav>
+      <button onclick="showTab('library')">Library</button>
+      <button onclick="showTab('manage')">Manage</button>
+      <button onclick="showTab('settings')">Settings</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- LIBRARY -->
+    <section id="library" class="tab active">
+      <h2>Your Games</h2>
+      <ul id="gameList"></ul>
+    </section>
+
+    <!-- MANAGE -->
+    <section id="manage" class="tab">
+      <h2>Add Game</h2>
+      <input id="gameInput" placeholder="Enter game name">
+      <button onclick="addGame()">Add</button>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="settings" class="tab">
+      <h2>Settings</h2>
+      <p>Game Frame v2</p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
