@@ -1,57 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+let games = JSON.parse(localStorage.getItem("games")) || [];
 
-  <title>Game Frame</title>
+function showTab(tabId) {
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.classList.remove("active");
+  });
 
-  <!-- ICON FIX -->
-  <link rel="icon" type="image/png" href="icon.png">
-  <link rel="apple-touch-icon" href="icon.png">
+  document.getElementById(tabId).classList.add("active");
+}
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Game Frame">
+function render() {
+  const list = document.getElementById("gameList");
+  list.innerHTML = "";
 
-  <link rel="stylesheet" href="style.css">
-</head>
+  games.forEach((game, i) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      ${game}
+      <button onclick="removeGame(${i})">X</button>
+    `;
+    list.appendChild(li);
+  });
 
-<body>
+  localStorage.setItem("games", JSON.stringify(games));
+}
 
-  <header>
-    <h1>🎮 Game Frame</h1>
+function addGame() {
+  const input = document.getElementById("gameInput");
+  if (!input.value) return;
 
-    <nav>
-      <button onclick="showTab('library')">Library</button>
-      <button onclick="showTab('manage')">Manage</button>
-      <button onclick="showTab('settings')">Settings</button>
-    </nav>
-  </header>
+  games.push(input.value);
+  input.value = "";
 
-  <main>
+  render();
+}
 
-    <!-- LIBRARY -->
-    <section id="library" class="tab active">
-      <h2>Your Games</h2>
-      <ul id="gameList"></ul>
-    </section>
+function removeGame(i) {
+  games.splice(i, 1);
+  render();
+}
 
-    <!-- MANAGE -->
-    <section id="manage" class="tab">
-      <h2>Add Game</h2>
-      <input id="gameInput" placeholder="Enter game name">
-      <button onclick="addGame()">Add</button>
-    </section>
-
-    <!-- SETTINGS -->
-    <section id="settings" class="tab">
-      <h2>Settings</h2>
-      <p>Game Frame v2</p>
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+render();
+showTab("library");
