@@ -1,167 +1,52 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Plus Jakarta Sans',sans-serif;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
 }
 
-body{
-background:#0d0917;
-color:white;
-padding:20px;
+header {
+  padding: 30px 10px;
 }
 
-header{
-display:flex;
-align-items:center;
-gap:15px;
-margin-bottom:20px;
+main {
+  max-width: 500px;
+  margin: auto;
+  padding: 10px;
 }
 
-.logoBox{
-width:55px;
-height:55px;
-border-radius:18px;
-background:#b69cff;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:24px;
+.input-area {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-header p{
-opacity:.6;
-font-size:14px;
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 70%;
 }
 
-.tabs{
-display:flex;
-background:#1a1328;
-padding:8px;
-border-radius:999px;
-margin-bottom:25px;
-gap:8px;
+button {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
 }
 
-.tab{
-flex:1;
-padding:14px;
-border:none;
-border-radius:999px;
-background:none;
-color:white;
-font-weight:700;
-cursor:pointer;
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-.tab.active{
-background:#b69cff;
-color:black;
-}
-
-.page{
-display:none;
-}
-
-.page.active{
-display:block;
-}
-
-.card{
-background:#1a1328;
-border:1px solid #40305e;
-padding:20px;
-border-radius:30px;
-margin-bottom:20px;
-}
-
-input,select{
-width:100%;
-padding:14px;
-margin-top:10px;
-margin-bottom:10px;
-border-radius:18px;
-border:1px solid #4d3c6d;
-background:#261d39;
-color:white;
-}
-
-button{
-cursor:pointer;
-}
-
-#addConsoleBtn,
-#addGameBtn,
-#spinBtn{
-width:100%;
-padding:16px;
-border:none;
-border-radius:999px;
-background:#b69cff;
-font-weight:800;
-margin-top:10px;
-}
-
-.sectionTitle{
-display:flex;
-justify-content:space-between;
-margin-bottom:20px;
-}
-
-.gameCard{
-background:#1a1328;
-border:1px solid #40305e;
-border-radius:28px;
-overflow:hidden;
-margin-bottom:18px;
-cursor:pointer;
-transition:.2s;
-}
-
-.gameCard:active{
-transform:scale(.96);
-}
-
-.gameImage{
-width:100%;
-height:210px;
-object-fit:cover;
-}
-
-.gameInfo{
-padding:16px;
-}
-
-.gameButtons{
-display:flex;
-gap:8px;
-padding:16px;
-}
-
-.smallButton{
-flex:1;
-padding:10px;
-border:none;
-border-radius:999px;
-background:#32264a;
-color:white;
-}
-
-#wheel{
-height:180px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:28px;
-font-weight:800;
-border-radius:20px;
-background:#261d39;
-margin:15px 0;
-}
-
-#messageBox{
-margin-top:15px;
-text-align:center;
-color:#b69cff;
-font-weight:700;
+li {
+  background: rgba(0,0,0,0.3);
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
 }
